@@ -53,7 +53,7 @@ const App = () => {
         name: newName,
         account: newAccount,
         transaction: "Self service",
-        amount: newAmount,
+        amount: -newAmount,
         reference: newReference,
         message: newMessage
       })

@@ -2,6 +2,7 @@ import React from 'react'
 import Transaction from './Transaction'
 
 const Home = ({transactions}) => {
+  const balance = transactions.reduce((prev,next) => prev + next.amount,0)
   const rows = () => transactions.map(transaction =>
     <Transaction
       key={transaction.id}
@@ -20,8 +21,8 @@ const Home = ({transactions}) => {
                     <div className="text-xs font-weight-bold text-primary text-uppercase mb-1">
                       Available Balance
                     </div>
-                    <div className="h5 mb-0 font-weight-bold text-gray-800">
-                      650€
+                    <div className="mb-0 font-weight-bold text-gray-800">
+                      <h5>{balance} €</h5>
                     </div>
                   </div>
                   <div className="col-auto"><i className="fa fa-euro text-gray-primary"></i></div>
@@ -30,15 +31,15 @@ const Home = ({transactions}) => {
             </div>
           </div>
           <div className="col-lg-4 col-md-6 mb-3">
-            <div className="card border-left-primary shadow h-100 py-2">
+            <div className="card border-left-info shadow h-100 py-2">
               <div className="card-body">
                 <div className="row no-gutters align-items-center">
                   <div className="col mr-2">
                     <div className="text-xs font-weight-bold text-info text-uppercase mb-1">
-                      Pending limit (monthly)
+                      Spending limit (monthly)
                     </div>
-                    <div className="h5 mb-0 font-weight-bold text-gray-800">
-                      450€
+                    <div className="mb-0 font-weight-bold text-gray-800">
+                      <h5>455€</h5>
                     </div>
                   </div>
                   <div className="col-auto"><i className="fa fa-tachometer text-gray-primary"></i></div>
@@ -47,15 +48,15 @@ const Home = ({transactions}) => {
             </div>
           </div>
           <div className="col-lg-4 col-md-6 mb-3">
-            <div className="card border-left-primary shadow h-100 py-2">
+            <div className="card border-left-warning shadow h-100 py-2">
               <div className="card-body">
                 <div className="row no-gutters align-items-center">
                   <div className="col mr-2">
                     <div className="text-xs font-weight-bold text-warning text-uppercase mb-1">
                       Pending payments
                     </div>
-                    <div className="h5 mb-0 font-weight-bold text-gray-800">
-                      0
+                    <div className="mb-0 font-weight-bold text-gray-800">
+                      <h5>0</h5>
                     </div>
                   </div>
                   <div className="col-auto"><i className="fa fa-money text-gray-primary"></i></div>

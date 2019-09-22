@@ -13,7 +13,7 @@ const Account = () => {
                     <p className="card-text">Date of issue: <span className="text-bold">Feb 9, 2019.</span></p>
                 </div>
                 <div className="card-footer text-muted">
-                    <p>This account is give to young customers of age 14-18.</p>
+                    <p>This account is given to young customers of age 14-18.</p>
                 </div>
             </div>
         </div>

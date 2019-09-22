@@ -1,5 +1,21 @@
 /* Fonts */
+/* @import url('https://fonts.googleapis.com/css?family=Nunito+Sans|Raleway:500&display=swap'); */
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans|Righteous:400&display=swap');
 
+h1, h2, h3, h4, h5, h6 {
+    /* font-family: 'Raleway', sans-serif; */
+    font-family: 'Righteous', cursive;
+    font-weight: 500;
+}
+body {
+    font-family: 'Nunito Sans', sans-serif;
+}
+p {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #313A46;
+}
 .border-left-primary {
     border-left: .25rem solid #4e73df!important;
 }
@@ -12,22 +28,45 @@
 .border-left-info {
     border-left: .25rem solid #36b9cc!important;
 }
+
+.bg-gray-800 {
+    background: #343a40 !important;
+}
+.text-gray-300 {
+    color: #dee2e6;
+}
 .text-gray {
-    color: #dddfeb!important;
+    color: #dee2e6;
+}
+.text-muted {
+    color: #868e96 !important;
 }
 .text-gray-primary {
     color: rgba(0,123,255,.25)!important;
     font-size: 50px;
-}
+}  
 
-.fa, .fas {
-    font-weight: 900;
-}
 /* Footer */
 
 /* Social media icons */
+.social-icons .fa {
+    display: inline-block;
+    height: 3.5rem;
+    width: 3.5rem;
+    background-color: #495057;
+    color: #fff!important;
+    border-radius: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 3.5rem;
+    margin: none;
+    text-decoration: none;
+}
 
 /* Overriding Bootstrap CSS */
+.alert .card {
+    background-color: transparent;
+}
 .card-header, .card-footer {
     background-color: #f8f9fc !important;
     border-bottom: 1px solid #e3e6f0;

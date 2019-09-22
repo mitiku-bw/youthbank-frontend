@@ -13,7 +13,7 @@ const Navbar = () => {
                 <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">
-                <ul className="navbar-nav">
+                <ul className="navbar-nav w-100 justify-content-center">
                     <li className="nav-item">
                         <NavLink className="nav-link" to="/" activeClassName="active">Home <span className="sr-only">(current)</span></NavLink>
                     </li>
@@ -22,6 +22,14 @@ const Navbar = () => {
                     </li>
                     <li className="nav-item">
                         <NavLink className="nav-link" to="/account">Account <span className="sr-only">(current)</span></NavLink>
+                    </li>
+                </ul>
+                <ul className="navbar-nav w-100 justify-content-end">
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/profile">Mitiku Wubetie <span className="sr-only">(current)</span></NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink className="nav-link" to="/login">Log out <span className="sr-only">(current)</span></NavLink>
                     </li>
                 </ul>
             </div>
