@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseUrl = 'http://localhost:3003/api/transactions'
+const baseUrl = '/api/transactions'
 
 const getAll = () => {
   const promise = axios.get(baseUrl)

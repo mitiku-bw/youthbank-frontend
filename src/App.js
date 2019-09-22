@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import {
   BrowserRouter as Router,
-  Route, Link, Redirect, withRouter
+  Route
 } from 'react-router-dom'
+
 
 import Navbar from './components/Navbar'
 import Home from './components/Home'
@@ -10,7 +11,7 @@ import Payment from './components/Payment'
 import Account from './components/Account'
 import Footer from './components/Footer'
 import Notification from './components/Notification'
-// import Login from './components/Login'
+import Login from './components/Login'
 import transactionService from './services/transactions'
 
 const App = () => {
@@ -98,6 +99,7 @@ const App = () => {
           />} 
         />
         <Route path="/account" render={() => <Account />} />
+        <Route path="/login" render={() => <Login />} />
         <Footer />
       </Router>
     </div>
