@@ -8,8 +8,8 @@ const getAll = () => {
   return promise.then(response => response.data)
 }
 
-const create = (person) => {
-  const promise = axios.post(baseUrl, person)
+const create = (transaction) => {
+  const promise = axios.post(baseUrl, transaction)
 
   return promise.then(response => response.data)
 }
