@@ -6,7 +6,7 @@ const Login = () => {
         console.log(response)
     }
     return(
-        <div className="container">
+        <div className="container big-page d-flex justify-content-center">
             <div className="card">
                 <div className="card-header">
                     <h5 className="card-title text-center">Login with facebook!</h5>

@@ -12,6 +12,7 @@ import Account from './components/Account'
 import Footer from './components/Footer'
 import Notification from './components/Notification'
 import Login from './components/Login'
+import Profile from './components/Profile'
 import transactionService from './services/transactions'
 
 const App = () => {
@@ -100,6 +101,7 @@ const App = () => {
         />
         <Route path="/account" render={() => <Account />} />
         <Route path="/login" render={() => <Login />} />
+        <Route path="/profile" render={() => <Profile />} />
         <Footer />
       </Router>
     </div>

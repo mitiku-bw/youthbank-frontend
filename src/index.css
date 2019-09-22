@@ -46,6 +46,18 @@ p {
     font-size: 50px;
 }  
 
+/* Login page */
+.big-page {
+    min-height: calc(100vh - 315px);
+}
+.big-page .card {
+    background-color: transparent !important;
+    border: none;
+}
+.big-page .card .card-header {
+    background-color: transparent !important;
+    border: none;
+}
 /* Footer */
 
 /* Social media icons */
@@ -64,6 +76,10 @@ p {
 }
 
 /* Overriding Bootstrap CSS */
+.big-page .card-img-top {
+    height: auto;
+    max-width: 300px;
+}
 .alert .card {
     background-color: transparent;
 }
