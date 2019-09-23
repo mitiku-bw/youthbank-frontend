@@ -28,12 +28,22 @@ const App = () => {
     message: null
   })
 
+
   useEffect(() => {
     transactionService.getAll()
       .then(data => {
         setTransactions(data)
       })
   }, [])
+
+  useEffect(() => {
+    const loggedUserJSON = window.localStorage.getItem('loggedUser')
+    if (loggedUserJSON) {
+      const user = JSON.parse(loggedUserJSON)
+      setUser(user)
+    }
+  }, [])
+
 
   const handleNameChange = (event) => setNewName(event.target.value)
   const handleAccountChange = (event) => setNewAccount(event.target.value)
@@ -45,10 +55,6 @@ const App = () => {
   const notify = (message, type='success') => {
     setNotification({ message, type })
     setTimeout(() => setNotification({ message: null }), 10000)
-  }
-
-  const login = (responseFacebook) => {
-    setUser(responseFacebook.name)
   }
 
   const handlePayment = (event) => {
@@ -87,32 +93,32 @@ const App = () => {
         <Navbar user={user}/>
         <Notification notification={notification} />
         <Route exact path="/" render={() =>
-          user ? <Home transactions={transactions} /> 
-                : <Redirect to="/login" />
-          } />
+        user ? <Home transactions={transactions} /> 
+              : <Redirect to="/login" />
+        } />
         <Route path="/payment" render={() => 
-            user ? <Payment 
-              handleNameChange={handleNameChange}
-              handleAccountChange={handleAccountChange}
-              handleAmountChange={handleAmountChange}
-              handleDateChange={handleDateChange}
-              handleReferenceChange={handleReferenceChange}
-              handleMassageChange={handleMessageChange}
-              handlePayment={handlePayment}
-              newName={newName}
-              newAccount={newAccount}
-              newAmount={newAmount}
-              newDate={newDate}
-              newReference={newReference}
-              newMessage={newMessage}
-            />  : <Redirect to="/login" />
-          } />
+        user ? <Payment 
+                handleNameChange={handleNameChange}
+                handleAccountChange={handleAccountChange}
+                handleAmountChange={handleAmountChange}
+                handleDateChange={handleDateChange}
+                handleReferenceChange={handleReferenceChange}
+                handleMassageChange={handleMessageChange}
+                handlePayment={handlePayment}
+                newName={newName}
+                newAccount={newAccount}
+                newAmount={newAmount}
+                newDate={newDate}
+                newReference={newReference}
+                newMessage={newMessage}
+              />   : <Redirect to="/login" />
+            } />
         <Route path="/account" render={() =>
           user ? <Account /> : <Redirect to="/login" />
           } />
-        <Route path="/login" render={() => <Login onLogin={login} />} />
+        <Route path="/login" render={() => <Login />} />
         <Route path="/profile" render={() =>
-          user ? <Profile /> : <Redirect to="/login" />
+          user ? <Profile user={user} /> : <Redirect to="/login" />
           } />
         <Footer />
       </Router>

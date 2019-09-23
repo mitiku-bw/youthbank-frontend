@@ -3,6 +3,8 @@ import { NavLink } from 'react-router-dom'
 import Logo from '../youth_logo.png'
 
 const Navbar = ({user}) => {
+    const profileName = user ? user.name : ""
+
     return(
     <nav className="navbar navbar-light navbar-expand-md navbar-light bg-white justify-content-center">
         <div className="container">
@@ -26,11 +28,11 @@ const Navbar = ({user}) => {
                 </ul>
                 <ul className="navbar-nav w-100 justify-content-end">
                     <li className="nav-item">
-                        <NavLink className="nav-link" to="/profile">{user} <span className="sr-only">(current)</span></NavLink>
+                        <NavLink className="nav-link" to="/profile">{profileName} <span className="sr-only">(current)</span></NavLink>
                     </li>
                     <li className="nav-item">
                     {user
-                        ? <em>{user} logged in</em>
+                        ? <NavLink className="nav-link" to="/login">Log out<span className="sr-only">(current)</span></NavLink>
                         : <NavLink className="nav-link" to="/login">Login <span className="sr-only">(current)</span></NavLink>
                     }
                     </li>
